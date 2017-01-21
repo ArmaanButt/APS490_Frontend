@@ -1,0 +1,22 @@
+{
+  "name": "frontend490",
+  "version": "1.0.0",
+  "description": "Frontend for capstone project",
+  "main": "index.js",
+  "author": "Harsh Verma <harsh376@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "rimraf": "^2.5.4"
+  },
+  "devDependencies": {
+    "webpack": "beta",
+    "webpack-dev-server": "beta"
+  }
+}
