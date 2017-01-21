@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const sourcePath = path.join(__dirname, './src/app');
 const destPath = path.join(__dirname, './dist/app');
@@ -16,6 +18,14 @@ const rules = [
     },
   },
   {
+    test: /\.scss$/,
+    exclude: /node_modules/,
+    loader: ExtractTextPlugin.extract({
+        fallbackLoader: 'style-loader',
+        loader: 'css-loader!sass-loader',
+    }),
+  },
+  {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     use: [
@@ -23,7 +33,6 @@ const rules = [
     ],
   },
 ];
-
 
 module.exports = {
   context: sourcePath,
@@ -44,6 +53,9 @@ module.exports = {
       sourcePath,
     ]
   },
+  plugins: [
+    new ExtractTextPlugin('style.css'),
+  ],
   devServer: {
     contentBase: destPath,
     port: 3000,
