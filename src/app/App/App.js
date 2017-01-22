@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Home from '../Home/Home';
-
 // list of stylesheets
 require('../TestComponent/stylesheets/TestComponent.scss');
 

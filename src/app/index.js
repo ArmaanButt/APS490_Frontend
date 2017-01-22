@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
-import 'index.html';
-
 import App from './App/App';
 import NoMatch from './NoMatch/NoMatch';
 import TestComponent from './TestComponent/TestComponent';
@@ -19,5 +17,5 @@ const routes = (
 
 ReactDOM.render(
   <Router history={browserHistory}>{routes}</Router>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

@@ -6,7 +6,7 @@ function TestComponent() {
   return (
     <div>
       <div className="woo">Hello world!</div>
-      <img src={image} />
+      <img src={image} alt="mountains" />
     </div>
   );
 }

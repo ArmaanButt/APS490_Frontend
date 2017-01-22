@@ -1,3 +1,4 @@
+/* eslint no-console: ["error", { allow: ["log", "error"] }] */
 import path from 'path';
 import express from 'express';
 import morgan from 'morgan';
@@ -11,7 +12,7 @@ const PORT = 3000;
 const server = express();
 
 server.use(
-  morgan(':remote-addr - - :date[clf] :method :url HTTP/:http-version :status -')
+  morgan(':remote-addr - - :date[clf] :method :url HTTP/:http-version :status -'),
 );
 
 /*

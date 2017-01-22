@@ -43,6 +43,7 @@ module.exports = {
   entry: [
     'webpack-hot-middleware/client?reload=true',
     './index.js',
+    './index.html',
   ],
   output: {
     path: destPath,
