@@ -34,18 +34,19 @@ const rules = [
   },
   {
     test: /\.(png|gif|jpg|svg)$/,
-    use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
+    use: 'url-loader?limit=20480&name=images/[name]-[hash].[ext]',
   },
 ];
 
 module.exports = {
   context: sourcePath,
-  entry: {
-    js: './index.js',
-  },
+  entry: [
+    'webpack-hot-middleware/client?reload=true',
+    './index.js',
+  ],
   output: {
     path: destPath,
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
   },
   module: {
     rules,
@@ -58,6 +59,8 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin('style.css'),
   ],
   devServer: {
