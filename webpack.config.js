@@ -32,6 +32,10 @@ const rules = [
       'babel-loader',
     ],
   },
+  {
+    test: /\.(png|gif|jpg|svg)$/,
+    use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
+  },
 ];
 
 module.exports = {

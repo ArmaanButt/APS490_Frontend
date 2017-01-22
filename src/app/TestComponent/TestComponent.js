@@ -1,8 +1,13 @@
 import React from 'react';
 
+import image from './static/mountains.jpg';
+
 function TestComponent() {
   return (
-    <div className="woo">Hello world!</div>
+    <div>
+      <div className="woo">Hello world!</div>
+      <img src={image} />
+    </div>
   );
 }
 
