@@ -1,12 +1,12 @@
 import React from 'react';
 
-import image from './static/mountains.jpg';
+const imageUrl = process.env.BROWSER ? require('./static/mountains.jpg') : './static/mountains.jpg';
 
 function TestComponent() {
   return (
     <div>
       <div className="woo">Hello world!</div>
-      <img src={image} alt="mountains" />
+      <img src={imageUrl} alt="mountains" />
     </div>
   );
 }

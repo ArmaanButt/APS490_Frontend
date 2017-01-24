@@ -11,6 +11,8 @@ import webpackConfig from '../../webpack.config';
 const PORT = 3000;
 const server = express();
 
+delete process.env.BROWSER;
+
 server.use(
   morgan(':remote-addr - - :date[clf] :method :url HTTP/:http-version :status -'),
 );

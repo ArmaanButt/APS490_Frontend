@@ -63,6 +63,12 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin('style.css'),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'BROWSER': JSON.stringify(true),
+      },
+    }),
   ],
   devServer: {
     contentBase: destPath,

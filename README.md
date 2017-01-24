@@ -1,3 +1,8 @@
+## Requirements
+
+- NODE 6.9.4
+- yarn
+
 ## Instructions
 
 **Installation**
@@ -11,3 +16,7 @@
 **Adding dependencies**
 
 `yarn add <dependency>`
+
+**Run tests**
+
+`yarn run test`
