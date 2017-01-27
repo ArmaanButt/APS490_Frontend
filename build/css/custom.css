@@ -144,14 +144,14 @@ html , body{
     padding: 0 0 4px 0
 }
 .left_col {
-    background: #2A3F54
+    background: #2A3F54;
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
     width: 70px;
     padding: 0;
     z-index: 9999;
-    position: absolute
+    position: fixed;
 }
 .nav-sm .container.body .col-md-3.left_col.menu_fixed {
     position: fixed;
@@ -165,7 +165,7 @@ html , body{
     visibility: hidden
 }
 .nav-sm .container.body .right_col {
-    padding: 10px 20px;
+    padding: 65px 20px;
     margin-left: 70px;
     z-index: 2
 }
@@ -337,7 +337,7 @@ html , body{
     min-height: 100%;
     width: 230px;
     padding: 0;
-    position: absolute;
+    position: fixed;
     display: -ms-flexbox;
     display: flex;
     z-index: 1
@@ -350,7 +350,7 @@ body .container.body .right_col {
     background: #F7F7F7
 }
 .nav-md .container.body .right_col {
-    padding: 10px 20px 0;
+    padding: 65px 20px 0;
     margin-left: 230px
 }
 .nav_title {
