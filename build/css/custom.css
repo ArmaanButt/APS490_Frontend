@@ -374,7 +374,7 @@ body .container.body .right_col {
         padding-right: 0
     }
     .right_col {
-        padding: 10px !important
+        padding: 65px !important
     }
 }
 @media (max-width: 1200px) {
