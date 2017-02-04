@@ -10,11 +10,6 @@ import {
 
 
 class Signin extends React.Component {
-  static logIn(credentials) {
-    // TODO: do a fetch and log in
-    console.log(credentials);
-  }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -27,10 +22,9 @@ class Signin extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.logIn({
-      userId: this.state.formHorizontalUserId,
-      password: this.state.formHorizontalPassword,
-    });
+    // TODO: POST data
+    console.log(this.state.formHorizontalUserId);
+    console.log(this.state.formHorizontalPassword);
   }
 
   handleChange(e) {

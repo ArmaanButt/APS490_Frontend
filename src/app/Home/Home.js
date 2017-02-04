@@ -35,8 +35,13 @@ Home.propTypes = {
   children: React.PropTypes.oneOfType([
     React.PropTypes.arrayOf(React.PropTypes.node),
     React.PropTypes.node,
-  ]).isRequired,
-  enableAuth: React.PropTypes.bool.isRequired,
+  ]),
+  enableAuth: React.PropTypes.bool,
+};
+
+Home.defaultProps = {
+  children: null,
+  enableAuth: false,
 };
 
 
