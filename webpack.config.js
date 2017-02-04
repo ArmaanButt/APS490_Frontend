@@ -26,6 +26,20 @@ const rules = [
     }),
   },
   {
+    test: /\.less/,
+    use: [
+      {
+        loader: 'style-loader'
+      },
+      {
+        loader: 'css-loader'
+      },
+      {
+        loader: 'less-loader'
+      },
+    ],
+  },
+  {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     use: [
@@ -35,6 +49,18 @@ const rules = [
   {
     test: /\.(png|gif|jpg|svg)$/,
     use: 'url-loader?limit=20480&name=images/[name]-[hash].[ext]',
+  },
+  {
+    test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
+    use: "url-loader?limit=10000&mimetype=application/font-woff",
+  },
+  {
+    test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+    use: "url-loader?limit=10000&mimetype=application/octet-stream",
+  },
+  {
+    test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+    use: "file-loader",
   },
 ];
 

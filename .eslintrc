@@ -8,8 +8,11 @@
     "before": false,
     "beforeEach": false,
     "document": false,
+    "window": false,
+    "jest": false,
   },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-named-as-default": "off",
   },
 }
