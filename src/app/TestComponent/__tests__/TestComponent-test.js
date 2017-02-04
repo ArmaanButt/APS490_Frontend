@@ -1,13 +1,26 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TestComponent from '../TestComponent';
+import { TestComponentContainer } from '../TestComponentContainer';
 
-it('Displays correct text, correct img props', () => {
-  const wrapper = shallow(<TestComponent />);
+function setup() {
+  const props = {
+    addItem: jest.fn(),
+  };
 
-  expect(wrapper.find('.woo').text()).toEqual('Hello world!');
-  expect(wrapper.find('img').props()).toEqual({
-    alt: 'mountains',
-    src: './static/mountains.jpg',
+  const enzymeWrapper = shallow(<TestComponentContainer {...props} />);
+
+  return {
+    props,
+    enzymeWrapper,
+  };
+}
+
+
+describe('TestComponentContainer', () => {
+  it('Displays correct text, displays button', () => {
+    const { enzymeWrapper } = setup();
+
+    expect(enzymeWrapper.find('.woo').text()).toEqual('Hello world!');
+    expect(enzymeWrapper.find('button').text()).toEqual('Add');
   });
 });

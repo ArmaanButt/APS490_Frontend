@@ -45,6 +45,8 @@ const middleware = webpackDevMiddleware(compiler, {
 server.use(middleware);
 server.use(webpackHotMiddleware(compiler));
 
+server.use(express.static(path.join(__dirname, '../app')));
+
 // sending file so that on page refresh app doesn't break
 server.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../app/index.html'));

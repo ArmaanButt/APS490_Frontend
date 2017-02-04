@@ -1,15 +1,17 @@
 import React from 'react';
+import 'bootstrap/less/bootstrap.less';
+import Home from '../Home/Home';
 
 // list of stylesheets
 require('../TestComponent/stylesheets/TestComponent.scss');
+require('../Portal/stylesheets/Portal.scss');
 
 
 function App(props) {
   return (
-    <div>
-      Menu bar
+    <Home enableAuth>
       {props.children}
-    </div>
+    </Home>
   );
 }
 
