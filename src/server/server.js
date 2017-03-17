@@ -7,9 +7,21 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
 import webpackConfig from '../../webpack.config';
+import apiProxyRouter from './lib/apiProxyRouter';
+
+
+const multer = require('multer');
 
 const PORT = 3000;
 const server = express();
+
+const storage = multer.diskStorage({
+  destination: 'dist/app/uploads',
+  filename(req, file, cb) {
+    cb(null, `${file.originalname}`);
+  },
+});
+const upload = multer({ storage });
 
 delete process.env.BROWSER;
 
@@ -17,11 +29,21 @@ server.use(
   morgan(':remote-addr - - :date[clf] :method :url HTTP/:http-version :status -'),
 );
 
+server.post('/files', upload.single('file'), (req, res) => {
+  const file = req.file;
+  const meta = req.body;
+
+  // res.status(201).json({ image_name: meta.name });
+  res.status(400).json({ error: 'some badd request' });
+});
+
+
 /*
  ***************************************
  * PING endpoint
  ***************************************
  */
+server.use('/api', apiProxyRouter());
 server.get('/ping', (req, res) => {
   res.header('Content-Type', 'text/plain');
   res.send(new Date().toISOString());

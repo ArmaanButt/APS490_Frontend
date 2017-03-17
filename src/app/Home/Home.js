@@ -5,7 +5,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: true,
     };
   }
 
